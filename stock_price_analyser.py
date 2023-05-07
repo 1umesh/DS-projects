@@ -24,9 +24,13 @@ with col2:
 ticker_data=yf.Ticker(ticker_symbol)
 ticker_df=ticker_data.history(period="1d",start=f"{start_date}",end=f"{end_date}")
 st.dataframe(ticker_df)
+
 #graph for daily closing price 
+
 st.write(""" # daily closing price chart""")
 st.line_chart(ticker_df.Close)
+
 #graph for daily volume trades price 
+
 st.write(""" # daily trade volume chart""")
 st.line_chart(ticker_df.Volume)
